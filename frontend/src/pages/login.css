@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.title-divider {
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+    border: none;
+    margin: 10px auto 30px;
+}
+
+.login-box {
+    display: flex;
+    background-color: #fff;
+    width: 800px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.welcome-section {
+    background-color: #e6b5c0;
+    width: 50%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 5px;
+}
+
+.form-section {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 48%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.login-button {
+    background-color: #000;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #444;
+}
