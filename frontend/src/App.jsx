@@ -5,6 +5,12 @@ import Cart from './pages/Cart';
 import SignIn from './pages/SignIn';
 import Login from './pages/Login';
 import Menp from './pages/Menp';
+import About from './pages/Aboutus';
+import Contact from './pages/Contactus';
+import Women from './pages/Women';
+import Womenp from './pages/Womenp';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -31,19 +37,36 @@ function App() {
             <li>
               <Link to="/Menp">Men Premium</Link>
             </li>
+            <li>
+              <Link to="/Women">Women Premium</Link>
+            </li>
+            <li>
+              <Link to="/Womenp">Women Premium</Link>
+            </li>
+            <li>
+              <Link to="/Contactus">About</Link>
+            </li>
+            <li>
+              <Link to="/Aboutus">Contact</Link>
+            </li>
           </ul>
         </nav>
 
         {/* Define Routes */}
         <Routes>
           <Route path="/" element={<h1>Welcome to the Clothing Store</h1>} />
-          <Route path="/Men" element={<Men />} /> 
+          <Route path="/Men" element={<Men />} />
+          <Route path="/Women" element={<Women />} />  
           <Route path="/Cart" element={<Cart />} /> 
           <Route path="/SignIn" element={<SignIn />} />
            <Route path="/Login" element={<Login />} />
            <Route path="/Menp" element={<Menp />} />
+           <Route path="/Womenp" element={<Womenp />} />
+           <Route path="/Aboutus" element={<About />} />
+           <Route path="/Contactus" element={<Contact />} />
            <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
