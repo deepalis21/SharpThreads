@@ -10,7 +10,8 @@ import Contact from './pages/Contactus';
 import Women from './pages/Women';
 import Womenp from './pages/Womenp';
 import Footer from './components/Footer';
-
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -54,7 +55,7 @@ function App() {
 
         {/* Define Routes */}
         <Routes>
-          <Route path="/" element={<h1>Welcome to the Clothing Store</h1>} />
+          <Route path="/" element={<Home/>} />
           <Route path="/Men" element={<Men />} />
           <Route path="/Women" element={<Women />} />  
           <Route path="/Cart" element={<Cart />} /> 
