@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -20,7 +22,8 @@ const Navbar = () => {
       placeholder="search.."
       className="search-bar"
       />
-      <span className="search-icon-inside">🔍</span>
+      <span className="search-icon-inside">
+      <FontAwesomeIcon icon={faSearch} /></span>
       </div>
         <a href="#" className="login-btn">Log In</a>
       </div>
