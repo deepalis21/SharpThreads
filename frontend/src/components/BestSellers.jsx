@@ -3,10 +3,10 @@ import './BestSellers.css';
 
 const BestSellers = () => {
   const products = [
-    { id: 1, name: 'Men\'s Casual T-shirt', category: 'Men', img: '/men1.png' },
-    { id: 2, name: 'Men\'s Graphic T-shirt', category: 'Men', img: '/men2.png' },
-    { id: 3, name: 'Women\'s Floral T-shirt', category: 'Women', img: '/women1.png' },
-    { id: 4, name: 'Women\'s Basic T-shirt', category: 'Women', img: '/women2.jpg' },
+    { id: 1, name: 'Men\'s Casual T-shirt', category: 'Men', img: '/images/men1.png' },
+    { id: 2, name: 'Men\'s Graphic T-shirt', category: 'Men', img: '/images/men2.png' },
+    { id: 3, name: 'Women\'s Floral T-shirt', category: 'Women', img: '/images/women1.png' },
+    { id: 4, name: 'Women\'s Basic T-shirt', category: 'Women', img: '/images/women2.jpg' },
   ];
 
   return (
