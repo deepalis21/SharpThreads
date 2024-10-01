@@ -11,14 +11,15 @@ import Women from './pages/Women';
 import Womenp from './pages/Womenp';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
+
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
     <Router>
       <div className="app">
-        {/* Navigation */}
-        <nav>
+        
+        <Navbar/>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -51,7 +52,7 @@ function App() {
               <Link to="/Aboutus">Contact</Link>
             </li>
           </ul>
-        </nav>
+        
 
         {/* Define Routes */}
         <Routes>
