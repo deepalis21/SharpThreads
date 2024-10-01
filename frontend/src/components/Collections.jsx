@@ -11,12 +11,12 @@ const Collections = () => {
           <button className="shop-btn">Shop Now</button>
         </div>
         <div className="image-container men-image">
-          <img src="/men3.jpg" alt="Man wearing base collection" />
+          <img src="/images/men3.jpg" alt="Man wearing base collection" />
         </div>
         </div>
         <div className="collection-item women-collection">
         <div className="image-container women-image">
-          <img src="/women3.jpg" alt="Woman wearing winter collection" />
+          <img src="/images/women3.jpg" alt="Woman wearing winter collection" />
         </div>
         <div className="content">
           <h2>Women</h2>
