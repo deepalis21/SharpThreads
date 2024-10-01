@@ -9,7 +9,7 @@ const HeroSection = () => {
         <button className="shop-btn">Shop Collection</button>
       </div>
       <div className="hero-image">
-        <img src="/homepage.png" alt="hero" />
+        <img src="/images/homepage.png" alt="hero" />
       </div>
     </section>
   );
