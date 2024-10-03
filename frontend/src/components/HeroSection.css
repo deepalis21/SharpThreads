@@ -1,48 +1,64 @@
 .hero-section {  
-   display: flex;   
-   justify-content:space-around; 
-   align-items: flex-start;  
-   background-color: #f7d5d5;   
-   padding: 40px 0;   
-   height:70vh;   
-   box-sizing: border-box;
-   margin-top: 20px; 
-   overflow: hidden;}      
+  display: flex;   
+  justify-content:space-around; 
+  align-items: flex-start;  
+  background-color: #f7d5d5;   
+  padding: 40px 0;   
+  height:70vh;   
+  box-sizing: border-box;
+  margin-top: 20px; 
+  }      
 
 
 
 .hero-text {    
-   text-align: left;    
-   max-width: 35%;    
-   margin-left: 20px;   
-   font-family:'math' ; 
-   
-     } 
+  text-align: left;    
+  max-width: 35%;    
+  margin-left: 20px;   
+ 
+  
+    } 
 
 
 .hero-text h1 {     
-  font-size: 45px; 
-  }     
+ font-size: 45px; 
+ font-family: 'fangsong'; 
+ }     
 
 
 .hero-text .shop-btn {     
-  margin-top: 20px;     
-  padding: 10px 20px;     
-  background-color: black;    
-  color: white;     
-  border:solid;     
-  cursor: pointer;  
- }    
+ margin-top: 5px;     
+ padding: 10px 20px;     
+ background-color: black;    
+ color: white;     
+ border:solid;     
+ cursor: pointer;  
+ width: auto;
+ margin-left: 10rem;
+ 
+}    
 
 
 
 .hero-image img {     
-  flex:1;     
-  display: flex;     
-  justify-content: center;     
-  align-items: center;     
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;     
-  /*height: 35vw; */  
-  }  
+     
+ display: flex;     
+ justify-content: center;     
+ align-items: center;     
+ max-height: 8900px;
+ 
+ width: auto;
+   
+ height: 35vw; 
+ }  
+
+ .hero-image {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   max-height: 100%;
+   width: auto;
+   overflow: visible;  
+ }
+ 
+ 

@@ -21,7 +21,7 @@ const Collections = () => {
         <div className="content">
           <h2>Women</h2>
           <p>Winter Collection</p>
-          <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id leo tempor, congue nunc nec, volutpat orci. Aliquam venenatis dui lectus, eu convallis turpis convallis et. Pellentesque.</p>
+          <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id leo tempor, congue nunc nec, volutpat orci. </p>
           <button className="shop-btn">Shop collection</button>
         </div>
       
