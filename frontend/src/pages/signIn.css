@@ -15,7 +15,7 @@ body {
 
 .container {
   background-color: #fff;
-  width: 600px;
+  width: 100%;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@ body {
 }
 
 button {
-  background-color: #000;
+  background-color: #ebe3e3;
   color: #fff;
   padding: 10px;
   border: none;
@@ -95,5 +95,5 @@ button {
 }
 
 button:hover {
-  background-color: #444;
+  background-color: #967272;
 }

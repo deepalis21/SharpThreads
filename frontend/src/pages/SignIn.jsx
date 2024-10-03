@@ -1,29 +1,59 @@
 import React, { useState } from "react";
 import './signIn.css'; // Use regular import if this is a standard CSS file
+import { useNavigate } from "react-router-dom";
+import axios from 'axios'; // Import Axios for making API requests
 
 const SignIn = () => {
-  // Create state variables for each input field
+  // State variables for form inputs
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); // To show error messages
+
+  const navigate = useNavigate();
 
   // Form validation function
-  const validateForm = (event) => {
-    event.preventDefault(); // Prevent the page from reloading
-
-    // Basic validation logic
+  const validateForm = () => {
     if (!firstName || !lastName || !email || !password) {
-      alert("All fields are required!");
+      setErrorMessage("All fields are required!");
       return false;
     }
     if (!email.includes("@")) {
-      alert("Please enter a valid email address!");
+      setErrorMessage("Please enter a valid email address!");
       return false;
     }
-
-    alert(`Welcome, ${firstName} ${lastName}!`);
+    setErrorMessage(""); // Clear any previous errors
     return true;
+  };
+
+  // Form submission handler
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent page reload
+    
+    // Validate the form before making an API request
+    if (!validateForm()) return;
+
+    try {
+      // Make the API request to your backend
+      const response = await axios.post('http://localhost:5175/api/users/signup', {
+        firstName,
+        lastName,
+        email,
+        password
+      });      
+
+      console.log(response.data); // Log the response for debugging
+
+      // If registration is successful, redirect to the Login page
+      navigate('/login');
+
+      // Optional: Show a success message (or use alert)
+      alert(`Welcome, ${firstName} ${lastName}! Registration successful.`);
+    } catch (error) {
+      console.error("Error during registration:", error);
+      setErrorMessage("Registration failed. Please try again.");
+    }
   };
 
   return (
@@ -35,7 +65,10 @@ const SignIn = () => {
       <div className="signup-form">
         <h2>Sign Up</h2>
         <hr />
-        <form id="signupForm" onSubmit={validateForm}>
+        {/* Display error messages */}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        
+        <form id="signupForm" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
               type="text"
@@ -43,6 +76,7 @@ const SignIn = () => {
               placeholder="First Name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              required
             />
             <input
               type="text"
@@ -50,6 +84,7 @@ const SignIn = () => {
               placeholder="Last Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              required
             />
           </div>
           <div className="form-group">
@@ -59,6 +94,7 @@ const SignIn = () => {
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="form-group">
@@ -68,6 +104,7 @@ const SignIn = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
           <button type="submit">SIGN UP</button>
@@ -76,4 +113,5 @@ const SignIn = () => {
     </div>
   );
 };
+
 export default SignIn;
