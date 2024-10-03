@@ -60,7 +60,7 @@ const SignIn = () => {
     <div className="container">
       <div className="welcome-box">
         <h1>SharpThreads</h1>
-        <p>w e l c o m e s</p>
+        <p className="wel">w e l c o m e s</p>
       </div>
       <div className="signup-form">
         <h2>Sign Up</h2>

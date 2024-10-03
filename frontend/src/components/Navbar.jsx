@@ -28,7 +28,10 @@ const Navbar = () => {
           </span>
         </div>
         <Link to="/Login" className="login-btn">Log In</Link>  
+        <Link to="/SignIn" className="login-btn">SignUp</Link>  
+        <Link to="/Cart" className="login-btn">Cart</Link>  
       </div>
+      
     </nav>
   );
 };

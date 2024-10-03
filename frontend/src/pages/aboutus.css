@@ -1,7 +1,10 @@
+
 .about-container {
     font-family: Arial, sans-serif;
-    padding: 20px;
+    margin: auto;
+    padding: -1px;
     color: #333;
+    padding-top: 519px;
 }
 
 .about-intro {

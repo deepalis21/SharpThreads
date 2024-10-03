@@ -1,13 +1,27 @@
+/* In your CSS file */
+body {
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+}
+
 .navbar {
-  
+  margin: 0;
+  padding: 0;
+}
+.navbar {
   display: flex;
   justify-content: space-between;
   padding: 5px 20px;
   background-color: #000;
   color: #fff;
   margin-top: 39.8rem;
+
+  width: 100%;
   align-items: center;
-  
+  top: 0;            /* Stick it to the top */ 
 }
 
 .nav-links {

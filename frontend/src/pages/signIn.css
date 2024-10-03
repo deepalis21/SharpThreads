@@ -26,12 +26,16 @@ body {
 .welcome-box {
   background-color: #e6b5c0;
   width: 50%;
-  height: 100%;
+  height: 302px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: inherit;
   padding: 20px;
+}
+.wel {
+justify-content: center;
 }
 
 .welcome-box h1 {
