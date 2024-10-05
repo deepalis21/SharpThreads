@@ -142,6 +142,7 @@ const Women = () => {
       <div className="product-grid">
         {filteredProducts.map(product => (
           <div className="product-card" key={product.id}>
+            {/* Updated Link to use dynamic product ID */}
             <Link to={`/women/${product.id}`}>
               <img src={product.img} alt={product.name} />
               <p className="category">WOMEN</p>
