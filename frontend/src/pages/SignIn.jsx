@@ -15,14 +15,26 @@ const SignIn = () => {
 
   // Form validation function
   const validateForm = () => {
+    // Regular expression to match only letters
+    const nameRegex = /^[A-Za-z]+$/;
+
     if (!firstName || !lastName || !email || !password) {
       setErrorMessage("All fields are required!");
+      return false;
+    }
+    if (!firstName.match(nameRegex)) {
+      setErrorMessage("First name should contain only letters!");
+      return false;
+    }
+    if (!lastName.match(nameRegex)) {
+      setErrorMessage("Last name should contain only letters!");
       return false;
     }
     if (!email.includes("@")) {
       setErrorMessage("Please enter a valid email address!");
       return false;
     }
+    
     setErrorMessage(""); // Clear any previous errors
     return true;
   };

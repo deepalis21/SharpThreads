@@ -9,6 +9,7 @@ import Men from './pages/Men';
 import Women from './pages/Women';
 import Cart from './pages/Cart';
 import Womenp from './pages/Womenp';
+import Menp from './pages/Menp';
 import Aboutus from './pages/Aboutus';
 import Contactus from './pages/Contactus';
 import SignIn from './pages/SignIn';
@@ -22,7 +23,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/men" element={<Men />} />
+          <Route path="/men/:id" element={<Menp />} />
           <Route path="/women" element={<Women />} />
+          <Route path="/menp" element={<Menp />} />
           <Route path="/women/:id" element={<Womenp />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signin" element={<SignIn />} />

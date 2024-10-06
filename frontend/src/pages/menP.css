@@ -17,7 +17,11 @@
     width: 100%;
     height: auto;
 }
-
+.size.selected {
+    background-color: #000; /* Change to your desired highlight color */
+    color: #fff;
+  }
+  
 /* Product details section */
 .product-details {
     width: 55%; /* Takes more space for content */

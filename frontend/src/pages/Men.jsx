@@ -12,48 +12,98 @@ export const Men = () => {
   const initialProducts = [
     {
       id: 1,
-      name: "T-Shirt Name 10",
+      name: "T-Shirt Name 1",
       price: 33,
       sizes: ["XS", "S", "M", "L", "XL"],
-      img: men1 // Use imported image
+      category: "T-Shirts",
+      color: "Red",
+      brand: "Brand A",
+      img: men1
     },
     {
       id: 2,
       name: "T-Shirt Name 2",
       price: 36,
       sizes: ["XS", "S", "M", "L", "XL"],
-      img: men2 // Use imported image
+      category: "T-Shirts",
+      color: "Blue",
+      brand: "Brand B",
+      img: men2
     },
     {
       id: 3,
-      name: "T-Shirt Name 4",
+      name: "T-Shirt Name 3",
       price: 35,
       sizes: ["XS", "S", "M", "L", "XL"],
-      img: men3 // Use imported image
+      category: "Hoodies",
+      color: "Green",
+      brand: "Brand C",
+      img: men3
     },
     {
       id: 4,
-      name: "T-Shirt Name 6",
+      name: "T-Shirt Name 4",
       price: 34,
       sizes: ["XS", "S", "M", "L", "XL"],
-      img: men4 // Use imported image
+      category: "Hoodies",
+      color: "Black",
+      brand: "Brand A",
+      img: men4
     },
   ];
 
   const [products, setProducts] = useState(initialProducts);
+  const [filters, setFilters] = useState({
+    category: "All",
+    size: "All",
+    color: "All",
+    brand: "All",
+    sort: "default"
+  });
 
-  const sortProducts = (event) => {
-    const sortOption = event.target.value;
-
-    let sortedProducts = [...products];
-    if (sortOption === "priceLowHigh") {
+  const sortProducts = (productsToSort) => {
+    let sortedProducts = [...productsToSort];
+    
+    if (filters.sort === "priceLowHigh") {
       sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (sortOption === "priceHighLow") {
+    } else if (filters.sort === "priceHighLow") {
       sortedProducts.sort((a, b) => b.price - a.price);
     }
 
-    setProducts(sortedProducts);
+    return sortedProducts;
   };
+
+  const applyFilters = () => {
+    let filteredProducts = [...initialProducts];
+
+    if (filters.category !== "All") {
+      filteredProducts = filteredProducts.filter(product => product.category === filters.category);
+    }
+
+    if (filters.size !== "All") {
+      filteredProducts = filteredProducts.filter(product => product.sizes.includes(filters.size));
+    }
+
+    if (filters.color !== "All") {
+      filteredProducts = filteredProducts.filter(product => product.color === filters.color);
+    }
+
+    if (filters.brand !== "All") {
+      filteredProducts = filteredProducts.filter(product => product.brand === filters.brand);
+    }
+
+    return sortProducts(filteredProducts);
+  };
+
+  const handleFilterChange = (event) => {
+    const { name, value } = event.target;
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [name]: value
+    }));
+  };
+
+  const filteredProducts = applyFilters();
 
   return (
     <div>
@@ -74,6 +124,7 @@ export const Men = () => {
       <div className="product-grid">
         {products.map(product => (
           <div className="product-card" key={product.id}>
+           <Link to={`/men/${product.id}`}>
             <img src={product.img} alt={product.name} />
             <p className="category">MEN</p>
             <h2>{product.name}</h2>
@@ -83,9 +134,14 @@ export const Men = () => {
                 <span key={size}>{size}</span>
               ))}
             </div>
+             </Link>
           </div>
         ))}
       </div>
     </div>
   );
 };
+
+
+
+export default Men;
