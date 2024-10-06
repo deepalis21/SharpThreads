@@ -1,38 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
-import axios from "axios"; // Import Axios for API requests
+import axios from "axios";
+import { AdminContext } from '../pages/AdminContext';
 
 const Login = () => {
-  // State variables for login form fields
+  const { loginAsAdmin } = useContext(AdminContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); // To handle error messages
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
-  // Function to handle form submission
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent form from reloading the page
+    event.preventDefault();
 
     try {
-      // Make API request to your backend for login
-    
       const response = await axios.post('http://localhost:5175/api/users/login', {
         firstName,
         lastName,
         password
       });
-      
-      console.log(response.data); // Check response from backend
-      
-      // On successful login, redirect to a dashboard or home page
+
+      console.log(response.data);
+
+      if (
+        (firstName === 'Deepali' && lastName === 'Singh' && password === 'deep') ||
+        (firstName === 'Deepalii' && lastName === 'Singh' && password === '111111')
+      ) {
+        loginAsAdmin(true);
+      } else {
+        loginAsAdmin(false);
+      }
+
       navigate('/');
       alert(`Welcome, ${firstName} ${lastName}! Login successful.`);
     } catch (error) {
       console.error("Login failed:", error);
-      setErrorMessage("Invalidd credentials. Please try again."); // Show error message to user
+      setErrorMessage("Invalid credentials. Please try again.");
     }
   };
 
@@ -48,7 +54,6 @@ const Login = () => {
         </div>
 
         <div className="form-section">
-          {/* Display error messages */}
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
 
           <form onSubmit={handleSubmit}>
