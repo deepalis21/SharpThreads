@@ -27,7 +27,7 @@ const Login = () => {
 
       if (
         (firstName === 'Deepali' && lastName === 'Singh' && password === 'deep') ||
-        (firstName === 'Deepalii' && lastName === 'Singh' && password === '111111')
+        (firstName === 'Anjana' && lastName === 'Panda' && password === '111')
       ) {
         loginAsAdmin(true);
       } else {
