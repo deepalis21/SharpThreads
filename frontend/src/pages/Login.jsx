@@ -17,7 +17,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5175/api/users/login', {
+      const response = await axios.post('http://localhost:4000/api/users/login', {
         firstName,
         lastName,
         password

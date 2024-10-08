@@ -48,7 +48,7 @@ const SignIn = () => {
 
     try {
       // Make the API request to your backend
-      const response = await axios.post('http://localhost:5175/api/users/signup', {
+      const response = await axios.post('http://localhost:4000/api/users/signup', {
         firstName,
         lastName,
         email,

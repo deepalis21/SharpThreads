@@ -15,7 +15,13 @@ const app = express();
 dotenv.config();
 
 // Middleware
-app.use(cors()); // Handle CORS
+const corsOption = {
+    origin: ['http://localhost:5173'],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}
+
+app.use(cors(corsOption)); // Handle CORS
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());  // To parse JSON bodies
@@ -49,7 +55,7 @@ app.use((err, req, res, next) => {
 });
 
 // Define the port and start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
