@@ -6,11 +6,11 @@ const Collections = () => {
   const navigate = useNavigate();
 
   const handleShopNowClick = () => {
-    navigate('/men');  // Navigates to the Men page
+    navigate('/men');  
   };
 
   const handleShopCollectionClick = () => {
-    navigate('/women');  // Navigates to the Women page
+    navigate('/women');  
   };
 
   return (
