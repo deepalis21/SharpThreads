@@ -3,16 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './Collections.css';
 
 const Collections = () => {
-  const navigate = useNavigate();
-
-  const handleShopNowClick = () => {
-    navigate('/men');  // Navigates to the Men page
-  };
-
-  const handleShopCollectionClick = () => {
-    navigate('/women');  // Navigates to the Women page
-  };
-
   return (
     <section className="collections">
       <div className="collection-item men-collection">
