@@ -1,16 +1,18 @@
 /* General layout */
 .product-page {
+
     display: flex;
     padding: 0;   /* Removed extra padding */
-    margin-top: 0; /* No margin at the top */
+    margin-top: -285px;
     align-items: flex-start;
     justify-content: space-between; /* Space between image and details */
 }
 
 /* Image styling */
 .product-image {
-    width: 40%; /* Adjusted width to match the layout */
+    width: 90%; 
     padding: 0;  /* Ensure no extra padding */
+    margin-top: 300px;
 }
 
 .product-image img {

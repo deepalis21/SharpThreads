@@ -3,7 +3,8 @@ import './login.css';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { AdminContext } from '../pages/AdminContext';
-
+import Navbar from '../components/Navbar'; // Import Navbar
+import Footer from '../components/Footer'; 
 const Login = () => {
   const { loginAsAdmin } = useContext(AdminContext);
   const [firstName, setFirstName] = useState("");
@@ -44,6 +45,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <Navbar /> {/* Include Navbar component */}
       <h1 className="login-title">Login</h1>
       <hr className="title-divider" />
 
@@ -87,7 +89,9 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <Footer /> 
     </div>
+    
   );
 };
 

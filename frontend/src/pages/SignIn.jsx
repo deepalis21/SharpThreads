@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import './signIn.css'; // Use regular import if this is a standard CSS file
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'; // Import Axios for making API requests
+import Navbar from '../components/Navbar'; 
+import Footer from '../components/Footer'; 
 
 const SignIn = () => {
   // State variables for form inputs
@@ -69,59 +71,63 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container">
-      <div className="welcome-box">
-        <h1>SharpThreads</h1>
-        <p className="wel">w e l c o m e s</p>
+    <div className="signup-container">
+      <Navbar /> 
+      <div className="container">
+        <div className="welcome-box">
+          <h1>SharpThreads</h1>
+          <p className="wel">w e l c o m e s</p>
+        </div>
+        <div className="signup-form">
+          <h2>Sign Up</h2>
+
+          {/* Display error messages */}
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+
+          <form id="signupForm" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                id="firstName"
+                placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                id="lastName"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit">SIGN UP</button>
+          </form>
+        </div>
       </div>
-      <div className="signup-form">
-        <h2>Sign Up</h2>
-        <hr />
-        {/* Display error messages */}
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        
-        <form id="signupForm" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              id="firstName"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              id="lastName"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              id="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">SIGN UP</button>
-        </form>
-      </div>
+      <Footer />
     </div>
   );
 };

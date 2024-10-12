@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './men.css'; 
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 // Importing the images dynamically
 import men1 from '../assets/men1.png';
 import men2 from '../assets/men2.png';
@@ -107,6 +108,7 @@ export const Men = () => {
 
   return (
     <div>
+            <Navbar />
       <div className="breadcrumb">
         <Link to="/">Home</Link> / <span>Men</span>
       </div>
@@ -138,6 +140,7 @@ export const Men = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import './cart.css'; // Import your styles
 import { CartContext } from './CartContext'; // Import CartContext
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'; // Import Footer component
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useContext(CartContext); // Use CartContext
@@ -12,6 +14,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
+      <Navbar />
       <div className="cart-items">
         <h2>Shopping Cart</h2>
         {cartItems.length === 0 ? (
@@ -31,7 +34,10 @@ const Cart = () => {
               {cartItems.map((item) => (
                 <tr key={item.id}>
                   <td><button className="remove-btn" onClick={() => removeFromCart(item.id)}>×</button></td>
-                  <td><img src={item.img} alt={item.name} className="product-image" />{item.name}</td>
+                  <td>
+                    <img src={item.img} alt={item.name} className="product-image" />
+                    {item.name}
+                  </td>
                   <td>€{item.price.toFixed(2)}</td>
                   <td><input type="number" value={item.quantity} readOnly /></td>
                   <td>€{(item.price * item.quantity).toFixed(2)}</td>
@@ -50,6 +56,8 @@ const Cart = () => {
           <button className="checkout-btn">Proceed to checkout</button>
         </div>
       )}
+      
+      <Footer /> {/* Footer should now stay at the bottom */}
     </div>
   );
 };

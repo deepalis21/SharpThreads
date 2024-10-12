@@ -1,9 +1,11 @@
 import React from 'react';
 import './aboutus.css'; 
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const AboutUs = () => {
     return (
         <div className="about-container">
+            <Navbar />
             
             <section className="about-intro">
                 <h2>About Us</h2>
@@ -48,6 +50,7 @@ const AboutUs = () => {
                      </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

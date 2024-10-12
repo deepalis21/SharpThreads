@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './contactus.css';
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const Contactus = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -58,6 +59,7 @@ const Contactus = () => {
 
   return (
     <div className="contact-container">
+       <Navbar />
       <h1>Contact Us</h1>
       <hr />
       <p className="contact-intro">
@@ -114,6 +116,7 @@ const Contactus = () => {
         </form>
         {responseMessage && <p className="response-message">{responseMessage}</p>}
       </div>
+      <Footer />
     </div>
   );
 };

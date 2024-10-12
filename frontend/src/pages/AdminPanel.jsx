@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AdminPanel.css';
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const AdminPanel = () => {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -105,6 +106,8 @@ const AdminPanel = () => {
 
     return (
         <div className="admin-panel">
+             <Navbar />
+            
             <h1>Admin Panel</h1>
             {error && <div className="error-message">{error}</div>}
             {success && <div className="success-message">{success}</div>}
@@ -168,6 +171,7 @@ const AdminPanel = () => {
                     ))}
                 </ul>
             </div>
+            <Footer />
         </div>
     );
 };

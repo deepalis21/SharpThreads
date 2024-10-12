@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import './menp.css';  // Ensure this path is correct
 import { useParams, useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 // Import images
 import men1 from '../assets/men1.png';
 import men2 from '../assets/men2.png';
@@ -106,7 +107,9 @@ const Menp = () => {
   };
 
   return (
+    <div>
     <div className="product-page">
+       <Navbar /> 
       <div className="product-image">
         <img src={product.img} alt={product.name} />
       </div>
@@ -155,7 +158,10 @@ const Menp = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer/>
     </div>
+    
   );
 };
 

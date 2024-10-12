@@ -2,7 +2,8 @@ import React, { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import './Womenp.css';
 import { CartContext } from './CartContext'; // Import CartContext
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const Womenp = () => {
   const { addToCart } = useContext(CartContext); // Use CartContext
   const [quantity, setQuantity] = useState(1);
@@ -74,7 +75,9 @@ const Womenp = () => {
   }
 
   return (
+    <div>
     <div className="product-page">
+      <Navbar /> 
       <div className="product-image">
         <img src={product.img} alt={product.name} />
       </div>
@@ -114,7 +117,11 @@ const Womenp = () => {
           Add to Cart
         </button>
       </div>
+      
     </div>
+      <Footer />
+      </div>
+
   );
 };
 

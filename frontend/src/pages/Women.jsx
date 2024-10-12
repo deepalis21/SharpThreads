@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './women.css'; 
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const Women = () => {
   const initialProducts = [
     {
@@ -101,7 +102,9 @@ const Women = () => {
 
   return (
     <div>
+       <Navbar /> 
       <div className="breadcrumb">
+      
         <Link to="/">Home</Link> / <span>Women</span>
       </div>
 
@@ -157,6 +160,7 @@ const Women = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

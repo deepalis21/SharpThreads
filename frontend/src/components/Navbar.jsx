@@ -11,8 +11,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="nav-links">
-        <li><Link to="/Women">Women</Link></li>
+      
         <li><Link to="/Men">Men</Link></li>
+          <li><Link to="/Women">Women</Link></li>
         <li><Link to="/Aboutus">About Us</Link></li>
         <li><Link to="/Contactus">Contact</Link></li>
         {isAdmin && <li><Link to="/admin">Admin Panel</Link></li>}

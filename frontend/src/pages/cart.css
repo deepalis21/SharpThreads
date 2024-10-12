@@ -1,92 +1,126 @@
 /* Cart.css */
+
+body, html {
+  height: 100%;
+  margin-top: 120px;
+}
+
+/* Ensure cart-container takes the full height and maintains a flex layout */
 .cart-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+  flex: 1; /* Take the full available height */
+  padding: 20px;
+}
+
+.cart-items, .cart-totals {
+  width: 45%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+.product-image {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.coupon {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.coupon input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.apply-coupon {
+  width: 25%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-totals p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.shipping-options {
+  margin: 15px 0;
+}
+
+.shipping-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.checkout-btn:hover {
+  background-color: #333;
+}
+
+/* Footer styling to make sure it's always at the bottom */
+footer {
+  margin-top: auto; /* Push the footer to the bottom of the page */
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Ensure layout is responsive on smaller screens */
+@media (max-width: 768px) {
+  .cart-content {
+    flex-direction: column;
   }
-  
+
   .cart-items, .cart-totals {
-    width: 45%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  h2 {
-    font-size: 24px;
+    width: 100%;
     margin-bottom: 20px;
   }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .product-image {
-    width: 50px;
-    margin-right: 10px;
-  }
-  
-  .remove-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .coupon {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .coupon input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .apply-coupon {
-    width: 25%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .cart-totals p {
-    margin: 15px 0;
-    font-size: 18px;
-  }
-  
-  .shipping-options {
-    margin: 15px 0;
-  }
-  
-  .shipping-options label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .checkout-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-  }
-  
-  .checkout-btn:hover {
-    background-color: #333;
-  }
+}

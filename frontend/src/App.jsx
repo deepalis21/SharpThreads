@@ -22,7 +22,7 @@ function App() {
     <AdminProvider>
       <CartProvider>
         <Router>
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/men" element={<Men />} />
@@ -38,7 +38,6 @@ function App() {
             <Route path="/admin" element={<AdminPanel />} />
             <Route path="*" element={<h1>404 - Not Found</h1>} />
           </Routes>
-          <Footer />
         </Router>
       </CartProvider>
     </AdminProvider>
