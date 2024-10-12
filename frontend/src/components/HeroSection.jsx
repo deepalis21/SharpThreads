@@ -6,7 +6,11 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleShopCollectionClick = () => {
+<<<<<<< HEAD
     navigate('/women');  // Navigates to the Women page
+=======
+    navigate('/women');  
+>>>>>>> 99e76205509e4f197419b04fb74b5fcf1858bde9
   };
 
   return (
