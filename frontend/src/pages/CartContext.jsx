@@ -22,6 +22,7 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  
   // Function to remove an item from the cart
   const removeFromCart = (productId) => {
     const updatedCartItems = cartItems.filter(item => item.id !== productId);

@@ -73,7 +73,6 @@ const Womenp = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
-
   return (
     <div>
     <div className="product-page">

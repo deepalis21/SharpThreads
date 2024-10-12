@@ -31,6 +31,7 @@ const AdminPanel = () => {
     useEffect(() => {
         fetchProducts();
     }, [selectedCategory]);
+    
 
     const handleAddProduct = async (e) => {
         e.preventDefault();

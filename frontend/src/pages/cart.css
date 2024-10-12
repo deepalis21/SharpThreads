@@ -107,7 +107,7 @@ th, td {
 
 /* Footer styling to make sure it's always at the bottom */
 footer {
-  margin-top: auto; /* Push the footer to the bottom of the page */
+  margin-top: auto; 
   padding: 20px;
   background-color: #f9f9f9;
   text-align: center;

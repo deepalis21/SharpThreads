@@ -11,7 +11,6 @@ const Cart = () => {
     const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
     return subtotal;
   };
-
   return (
     <div className="cart-container">
       <Navbar />
